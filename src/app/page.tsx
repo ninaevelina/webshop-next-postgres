@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
+import "../styles/_globals.scss";
 
 export default function Home() {
-  return <main className={styles.main}>Main page</main>;
+  return <main>Main page</main>;
 }
