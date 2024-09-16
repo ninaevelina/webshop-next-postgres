@@ -25,7 +25,7 @@ const books = [
     genre: "Science Fiction",
     language: "English",
     date: "2023-02-20",
-    image_url: "/public/books/never-let-me-go.png",
+    image_url: "/books/never-let-me-go.png",
     description:
       "Never Let Me Go takes place in an alternate reality of England during the 1990s in which mass human cloning is authorised and performed. Ishiguro started writing Never Let Me Go in 1990.",
   },
@@ -36,7 +36,7 @@ const books = [
     genre: "Fiction",
     language: "English",
     date: "1987-09-04",
-    image_url: "/public/books/norwegian-wood.png",
+    image_url: "/books/norwegian-wood.png",
     description:
       "Toru, a quiet and preternaturally serious young college student in Tokyo, is devoted to Naoko, a beautiful and introspective young woman, but their mutual passion is marked by the tragic death of their best friend years before. Toru begins to adapt to campus life and the loneliness and isolation he faces there, but Naoko finds the pressures and responsibilities of life unbearable. As she retreats further into her own world, Toru finds himself reaching out to others and drawn to a fiercely independent and sexually liberated young woman.",
   },
@@ -47,7 +47,7 @@ const books = [
     genre: "Fiction",
     language: "Swedish",
     date: "2024-05-08",
-    image_url: "/public/books/gruppen.png",
+    image_url: "/books/gruppen.png",
     description:
       "Hanna kommer till Madrid för att arbeta på Pradomuseet och allt i staden är inbjudande och förföriskt. En kväll träffar hon en grupp färgstarka unga svenskar som bestämt sig för att maximera sin tid i metropolen, som ägnar varje het sommarnatt åt att krama musten ur livet. Hanna dras till deras förtrollade krets, ivrig att få deras bekräftelse. Men de har resurser som hon inte har och efter hand fastnar hon i en härva av lögner och dubbelspel som riskerar att få fruktansvärda konsekvenser. Kommer de inse vem hon egentligen är?",
   },
@@ -58,7 +58,7 @@ const books = [
     genre: "Fiction",
     language: "Swedish",
     date: "2018-12-27",
-    image_url: "/public/books/brann-alla-mina-brev.webp",
+    image_url: "/books/brann-alla-mina-brev.webp",
     description:
       "Efter ett uppslitande gräl inser Alex att han bär på en vrede, ett odefinierbart mörker. Besatt av att ta reda på dess ursprung följer han ledtrådar som tar honom tillbaka till sommaren 1932 och vintern 1988, och de ödesdigra händelser som kom att förändra allt.",
   },
