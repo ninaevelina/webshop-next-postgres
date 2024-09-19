@@ -24,19 +24,21 @@ export async function fetchAuthors() {
 export async function fetchBooks() {
   noStore();
   try {
-    const data = await sql<Book>`
+    const data = await sql<Book & { author_name: string }>`
     SELECT
-    id,
-    author_id,
-    name,
-    price,
-    genre,
-    language,
-    date,
-    image_url,
-    description
+    books.id,
+    books.author_id,
+    books.name,
+    books.price,
+    books.genre,
+    books.language,
+    books.date,
+    books.image_url,
+    books.description,
+    authors.name as author_name
     FROM books
-    ORDER BY name ASC
+    JOIN authors ON books.author_id = authors.id
+    ORDER BY books.name ASC
     `;
 
     const books = data.rows;
