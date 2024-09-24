@@ -51,18 +51,20 @@ export async function fetchBooks() {
 
 export async function fetchBookById(id: string): Promise<Book> {
   try {
-    const data = await sql<Book>`
+    const data = await sql<Book & { author_name: string }>`
     SELECT
-    id,
-    author_id,
-    name,
-    price,
-    genre,
-    language,
-    date,
-    image_url,
-    description
+    books.id,
+    books.author_id,
+    books.name,
+    books.price,
+    books.genre,
+    books.language,
+    books.date,
+    books.image_url,
+    books.description,
+    authors.name AS author_name
     FROM books
+    JOIN authors ON books.author_id = authors.id
     WHERE books.id = ${id};
     `;
 

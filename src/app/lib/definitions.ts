@@ -13,4 +13,5 @@ export type Book = {
   date: string;
   image_url: string;
   description: string;
+  author_name: string;
 };
