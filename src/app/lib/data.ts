@@ -49,7 +49,7 @@ export async function fetchBooks() {
   }
 }
 
-export async function fetchBookById(id: string) {
+export async function fetchBookById(id: string): Promise<Book> {
   try {
     const data = await sql<Book>`
     SELECT
@@ -66,7 +66,7 @@ export async function fetchBookById(id: string) {
     WHERE books.id = ${id};
     `;
 
-    const book = data.rows;
+    const book = data.rows[0];
     return book;
   } catch (err) {
     console.error("Database Error:", err);
