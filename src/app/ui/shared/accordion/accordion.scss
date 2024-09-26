@@ -1,0 +1,21 @@
+@import "../../../../styles/main";
+
+.accordion {
+
+    .accordion-title-block, .accordion-content-block {
+        padding: 10px;
+    }
+    .accordion-title-block {
+        display: flex;
+        justify-content: space-between;
+    }
+    .accordion-open {
+        box-shadow: none;
+    }
+    .accordion-closed {
+        box-shadow: 0 1px 0 0 #000;
+    }
+    .content-open {
+        box-shadow: 0 1px 0 0 #000;
+    }
+}
