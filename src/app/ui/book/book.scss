@@ -1,0 +1,60 @@
+@import "../../../styles/main";
+
+.book-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "img"
+    "details"
+    "info";
+    margin: 40px auto;
+    width: calc(100% - 20px);
+
+    @include media-breakpoint(screen-md) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "img details"
+        "img info";
+    }
+
+    &__img-container {
+        place-self: center;
+        grid-area: img;
+        @include media-breakpoint(screen-md) {
+            display: flex;
+            justify-content: center;
+            height: 600px;
+        }
+    }
+
+    &__book-details {
+        grid-area: details;
+        text-align: center;
+        @include media-breakpoint(screen-md) {
+            text-align: left;
+        }
+        &--name {
+            margin-bottom: 16px;
+        }
+        &--author, &--lang {
+            margin-bottom: 8px;
+        }
+        
+    }
+
+    &__info {
+        grid-area: info;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        margin-top: 40px;
+        @include media-breakpoint(screen-md) {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding-top: 50px;
+            border: none;
+            margin-top: 0;
+        }
+    }
+}
