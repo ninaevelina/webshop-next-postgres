@@ -1,0 +1,29 @@
+@import "../../../styles/main";
+
+.search {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 50px);
+    margin: 50px;
+    @include media-breakpoint(screen-md) {
+        justify-content: flex-start;
+    }
+
+    &__label-visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+    }
+    &__input {
+        padding: 10px;
+        width: 60vw;
+        @include media-breakpoint(screen-lg) {
+            width: 50vw;
+        }
+    }
+}

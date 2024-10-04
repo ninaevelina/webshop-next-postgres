@@ -75,3 +75,31 @@ export async function fetchBookById(id: string): Promise<Book> {
     throw new Error("Failed to fetch book.");
   }
 }
+
+export async function fetchFilteredBooks(query: string) {
+  try {
+    const data = await sql<Book & { author_name: string }>`
+    SELECT
+    books.id,
+    books.author_id,
+    books.name,
+    books.price,
+    books.genre,
+    books.language,
+    books.date,
+    books.image_url,
+    books.description,
+    authors.name AS author_name
+    FROM books
+    JOIN authors ON books.author_id = authors.id
+    WHERE books.name ILIKE ${`%${query}%`}
+    ORDER BY books.name ASC
+    `;
+
+    const books = data.rows;
+    return books;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch filtered books.");
+  }
+}
