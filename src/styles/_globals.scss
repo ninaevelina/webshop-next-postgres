@@ -49,6 +49,11 @@ button {
   margin: 10px auto;
 }
 
+.breadcrumbs-container {
+  width: calc(100% - 20px);
+  margin: 20px auto;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
