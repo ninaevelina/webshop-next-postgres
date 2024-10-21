@@ -2,19 +2,30 @@
 
 import Link from "next/link";
 import "./header.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useIsMobileView from "@/app/hooks/useIsMobileView";
 import BagIcon from "../../icons/shoppingbag/bag-icon";
 import CloseIcon from "../../icons/close-icon";
 import Hamburger from "../../icons/hamburger";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function Header() {
+  const isMobileView = useIsMobileView();
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const isMobileView = useIsMobileView();
+  const handleRouteChange = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    handleRouteChange();
+  }, [pathname, searchParams]);
 
   return (
     <header className="site-header">
