@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/_globals.scss";
 import localFont from "next/font/local";
+import Header from "./ui/shared/header/header";
 
 const futura = localFont({
   src: "../fonts/FuturaEFCE-Medium.woff2",
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={futura.className}>{children}</body>
+      <body className={futura.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
