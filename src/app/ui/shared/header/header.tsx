@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import "./header.scss";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import useIsMobileView from "@/app/hooks/useIsMobileView";
 import BagIcon from "../../icons/shoppingbag/bag-icon";
 import CloseIcon from "../../icons/close-icon";
 import Hamburger from "../../icons/hamburger";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function Header() {
+function HeaderContent() {
   const isMobileView = useIsMobileView();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -60,5 +60,25 @@ export default function Header() {
         </div>
       )}
     </header>
+  );
+}
+
+function HeaderFallback() {
+  return (
+    <header className="site-header">
+      <div className="site-header-logo">
+        <Link href={"/"} className="site-header-logo__logo">
+          Logo
+        </Link>
+      </div>
+    </header>
+  );
+}
+
+export default function Header() {
+  return (
+    <Suspense fallback={<HeaderFallback />}>
+      <HeaderContent />
+    </Suspense>
   );
 }
