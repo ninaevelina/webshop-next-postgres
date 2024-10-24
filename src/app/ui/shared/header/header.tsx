@@ -31,7 +31,13 @@ function HeaderContent() {
     <header className="site-header">
       <div className="site-header-left">
         {isMobileView ? (
-          <button className="site-header-left__button" onClick={toggleMenu}>
+          <button
+            className="site-header-left__button"
+            onClick={toggleMenu}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="hamburger-menu"
+          >
             {isOpen ? <CloseIcon /> : <Hamburger />}
           </button>
         ) : (
@@ -48,13 +54,13 @@ function HeaderContent() {
         </Link>
       </div>
       <div className="site-header-right">
-        <button className="site-header-right__button">
+        <button className="site-header-right__button" aria-label="Shopping bag">
           <BagIcon />{" "}
           <span className="site-header-right__button--amount">0</span>
         </button>
       </div>
       {isOpen && isMobileView && (
-        <div className="site-header-hamburger-menu">
+        <div className="site-header-hamburger-menu" id="hamburger-menu">
           <Link href={"/"}>Home</Link>
           <Link href={"/books"}>Books</Link>
         </div>
