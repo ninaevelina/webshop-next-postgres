@@ -3,12 +3,14 @@ import Link from "next/link";
 import "./books.scss";
 import Search from "../search/search";
 import { Book } from "@/app/lib/definitions";
+import BooksHeader from "../books-header/books-header";
 
 export default async function Books({ books }: { books: Book[] }) {
   return (
     <>
+      <BooksHeader />
       <Search placeholder="Search for books" />
-      <ul className="booklist">
+      <ul className="booklist" id="book-list">
         {books.map((book) => {
           return (
             <li key={book.id} className="list-item">
