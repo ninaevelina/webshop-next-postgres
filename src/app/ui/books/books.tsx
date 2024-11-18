@@ -9,7 +9,7 @@ export default async function Books({ books }: { books: Book[] }) {
   return (
     <>
       <BooksHeader />
-      <Search placeholder="Search for books" />
+      <Search placeholder="Type to search.." />
       <ul className="booklist" id="book-list">
         {books.map((book) => {
           return (
