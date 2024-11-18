@@ -3,12 +3,14 @@ import Link from "next/link";
 import "./books.scss";
 import Search from "../search/search";
 import { Book } from "@/app/lib/definitions";
+import BooksHeader from "../books-header/books-header";
 
 export default async function Books({ books }: { books: Book[] }) {
   return (
     <>
-      <Search placeholder="Search for books" />
-      <ul className="booklist">
+      <BooksHeader />
+      <Search placeholder="Type to search.." />
+      <ul className="booklist" id="book-list">
         {books.map((book) => {
           return (
             <li key={book.id} className="list-item">
@@ -17,8 +19,8 @@ export default async function Books({ books }: { books: Book[] }) {
                   <Image
                     src={book.image_url}
                     alt={`Image of ${book.name}`}
-                    height={220}
-                    width={180}
+                    height={200}
+                    width={160}
                   />
                 </div>
                 <div className="book-card__details">
