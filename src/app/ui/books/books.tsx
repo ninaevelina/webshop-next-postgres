@@ -19,8 +19,8 @@ export default async function Books({ books }: { books: Book[] }) {
                   <Image
                     src={book.image_url}
                     alt={`Image of ${book.name}`}
-                    height={220}
-                    width={180}
+                    height={200}
+                    width={160}
                   />
                 </div>
                 <div className="book-card__details">
