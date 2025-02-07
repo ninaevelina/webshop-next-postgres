@@ -31,13 +31,13 @@ export default function Footer() {
               <span className="footer-links__list-item--separator">/</span>
             </li>
             <li className="footer-links__list-item">
-              <Link href={"/"} className="footer-links__list-item--link">
+              <Link href={"/contact"} className="footer-links__list-item--link">
                 Contact
               </Link>
               <span className="footer-links__list-item--separator">/</span>
             </li>
             <li className="footer-links__list-item">
-              <Link href={"/"} className="footer-links__list-item--link">
+              <Link href={"/about"} className="footer-links__list-item--link">
                 About us
               </Link>
               <span className="footer-links__list-item--separator">/</span>
