@@ -1,4 +1,4 @@
-/*import { db } from "@vercel/postgres";
+import { db } from "@vercel/postgres";
 import { authors, books } from "@/app/lib/placeholder-data";
 
 const client = await db.connect();
@@ -77,4 +77,3 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
-*/
