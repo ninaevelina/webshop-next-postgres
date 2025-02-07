@@ -1,4 +1,4 @@
-const authors = [
+/*const authors = [
   {
     id: "3958dc9e-742f-4377-85e9-fec4b6a6442a",
     name: "Sigge Eklund",
@@ -65,3 +65,4 @@ const books = [
 ];
 
 export { authors, books };
+*/
