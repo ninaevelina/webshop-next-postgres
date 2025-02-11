@@ -1,3 +1,5 @@
+import { Book } from "./definitions";
+
 const authors = [
   {
     id: "3958dc9e-742f-4377-85e9-fec4b6a6442a",
@@ -17,8 +19,9 @@ const authors = [
   },
 ];
 
-const books = [
+const books: Book[] = [
   {
+    id: "d6e15727-9fe1-4961-8c5b-ea44a9bd81aa",
     author_id: authors[3].id,
     name: "Never Let Me Go",
     price: 109,
@@ -28,8 +31,10 @@ const books = [
     image_url: "/books/never-let-me-go.png",
     description:
       "Never Let Me Go takes place in an alternate reality of England during the 1990s in which mass human cloning is authorised and performed. Ishiguro started writing Never Let Me Go in 1990.",
+    author_name: authors[3].name,
   },
   {
+    id: "CC27C14A-0ACF-4F4A-A6C9-D45682C144B9",
     author_id: authors[1].id,
     name: "Norwegian Wood",
     price: 89,
@@ -39,8 +44,10 @@ const books = [
     image_url: "/books/norwegian-wood.png",
     description:
       "Toru, a quiet and preternaturally serious young college student in Tokyo, is devoted to Naoko, a beautiful and introspective young woman, but their mutual passion is marked by the tragic death of their best friend years before. Toru begins to adapt to campus life and the loneliness and isolation he faces there, but Naoko finds the pressures and responsibilities of life unbearable. As she retreats further into her own world, Toru finds himself reaching out to others and drawn to a fiercely independent and sexually liberated young woman.",
+    author_name: authors[1].name,
   },
   {
+    id: "13D07535-C59E-4157-A011-F8D2EF4E0CBB",
     author_id: authors[0].id,
     name: "Gruppen",
     price: 109,
@@ -50,8 +57,10 @@ const books = [
     image_url: "/books/gruppen.png",
     description:
       "Hanna kommer till Madrid för att arbeta på Pradomuseet och allt i staden är inbjudande och förföriskt. En kväll träffar hon en grupp färgstarka unga svenskar som bestämt sig för att maximera sin tid i metropolen, som ägnar varje het sommarnatt åt att krama musten ur livet. Hanna dras till deras förtrollade krets, ivrig att få deras bekräftelse. Men de har resurser som hon inte har och efter hand fastnar hon i en härva av lögner och dubbelspel som riskerar att få fruktansvärda konsekvenser. Kommer de inse vem hon egentligen är?",
+    author_name: authors[0].name,
   },
   {
+    id: "410544b2-4001-4271-9855-fec4b6a6442a",
     author_id: authors[2].id,
     name: "Bränn alla mina brev",
     price: 79,
@@ -61,6 +70,7 @@ const books = [
     image_url: "/books/brann-alla-mina-brev.webp",
     description:
       "Efter ett uppslitande gräl inser Alex att han bär på en vrede, ett odefinierbart mörker. Besatt av att ta reda på dess ursprung följer han ledtrådar som tar honom tillbaka till sommaren 1932 och vintern 1988, och de ödesdigra händelser som kom att förändra allt.",
+    author_name: authors[2].name,
   },
 ];
 
