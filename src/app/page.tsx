@@ -1,5 +1,5 @@
 import "../styles/_globals.scss";
 
 export default function Home() {
-  return <main>Main page</main>;
+  return <main className="container-70vh">Main page</main>;
 }

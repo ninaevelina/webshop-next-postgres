@@ -52,8 +52,8 @@ async function seedBooks() {
   const insertedBooks = await Promise.all(
     books.map(
       (book) => client.sql`
-                INSERT INTO books (author_id, name, price, genre, language, date, image_url, description)
-                VALUES (${book.author_id}, ${book.name}, ${book.price}, ${book.genre}, ${book.language}, ${book.date}, ${book.image_url}, ${book.description})
+                INSERT INTO books (id, author_id, name, price, genre, language, date, image_url, description)
+                VALUES (${book.id}, ${book.author_id}, ${book.name}, ${book.price}, ${book.genre}, ${book.language}, ${book.date}, ${book.image_url}, ${book.description})
                 ON CONFLICT (id) DO NOTHING;
                 `
     )
