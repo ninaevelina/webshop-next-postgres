@@ -76,3 +76,24 @@ input[type="search"]::-webkit-search-results-decoration {
 .container-70vh {
   height: 70vh;
 }
+
+.cta-button {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $dark-grey;
+  border-radius: 36px;
+  margin-top: 4px;
+  color: $dark-grey;
+  transition: 0.5s;
+  outline: 0;
+}
+
+.cta-button:hover, .cta-button:focus, .cta-button:active {
+  background-color: $dark-grey;
+  color: $white;
+  transition: color 0.3s background 0.3s;
+  outline: 0;
+}
