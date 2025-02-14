@@ -17,6 +17,14 @@ const authors = [
     id: "76d65c26-f784-44a2-ac19-586678f7c2f2",
     name: "Kazuo Ishiguro",
   },
+  {
+    id: "cb1c0eb3-466c-4cc9-8071-b45840d0a52f",
+    name: "Philippe Besson",
+  },
+  {
+    id: "07761785-d06a-4351-b936-6d378b7d79c2",
+    name: "Sally Rooney",
+  },
 ];
 
 const books: Book[] = [
@@ -71,6 +79,58 @@ const books: Book[] = [
     description:
       "Efter ett uppslitande gräl inser Alex att han bär på en vrede, ett odefinierbart mörker. Besatt av att ta reda på dess ursprung följer han ledtrådar som tar honom tillbaka till sommaren 1932 och vintern 1988, och de ödesdigra händelser som kom att förändra allt.",
     author_name: authors[2].name,
+  },
+  {
+    id: "ee3fbbab-f4bf-45fd-8329-43f44e12032e",
+    author_id: authors[2].id,
+    name: "Malma station",
+    price: 119,
+    genre: "Fiction",
+    language: "Swedish",
+    date: "2023-11-16",
+    image_url: "/books/malma-station.jpeg",
+    description:
+      "Alex Schulmans nya roman utspelar sig på ett tåg. Fem personer är på resa genom Sverige: ett gift par i kris, en ensamstående far och hans dotter, och en kvinna som söker svaret på en gåta som hennes mamma lämnat efter sig.",
+    author_name: authors[2].name,
+  },
+  {
+    id: "b62b13ae-a0c6-4071-ae83-0b5db5793cd9",
+    author_id: authors[2].id,
+    name: "Överlevarna",
+    price: 79,
+    genre: "Fiction",
+    language: "Swedish",
+    date: "2021-08-12",
+    image_url: "/books/overlevarna.jpeg",
+    description:
+      'Tre bröder åker tvärs över landet för att sprida sin mors aska vid torpet som ingen av dem besökt på tjugo år. Alex Schulmans "Överlevarna" är en roman om att återuppleva sin barndom som vuxen.',
+    author_name: authors[2].name,
+  },
+  {
+    id: "b916bf96-5b90-4126-92e2-5b31e8b0d804",
+    author_id: authors[4].id,
+    name: "Lie With Me",
+    price: 169,
+    genre: "Fiction",
+    language: "English",
+    date: "2019-09-05",
+    image_url: "/books/lie-with-me.jpeg",
+    description:
+      "The award-winning, bestselling French novel by Philippe Besson about an affair between two teenage boys in 1984 France, translated with subtle beauty and haunting lyricism by the iconic and internationally acclaimed actress/writer Molly Ringwald.",
+    author_name: authors[4].name,
+  },
+  {
+    id: "90b548ef-f679-4e2c-ad0a-7e75df8d7b2f",
+    author_id: authors[5].id,
+    name: "Conversations With Friends",
+    price: 149,
+    genre: "Fiction",
+    language: "English",
+    date: "2022-05-16",
+    image_url: "/books/conversations-with-friends.jpg",
+    description:
+      "A sharply intelligent novel about friendship, lust, jealousy, and the unexpected complications of adulthood in the 21st century.",
+    author_name: authors[5].name,
   },
 ];
 
