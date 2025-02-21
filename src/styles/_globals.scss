@@ -45,6 +45,19 @@ button {
   cursor: pointer;
 }
 
+input[type=search]::-ms-clear, input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .container {
   margin: 10px auto;
 }
@@ -58,4 +71,29 @@ button {
   html {
     color-scheme: dark;
   }
+}
+
+.container-70vh {
+  height: 70vh;
+}
+
+.cta-button {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $dark-grey;
+  border-radius: 36px;
+  margin-top: 4px;
+  color: $dark-grey;
+  transition: 0.5s;
+  outline: 0;
+}
+
+.cta-button:hover, .cta-button:focus, .cta-button:active {
+  background-color: $dark-grey;
+  color: $white;
+  transition: color 0.3s background 0.3s;
+  outline: 0;
 }

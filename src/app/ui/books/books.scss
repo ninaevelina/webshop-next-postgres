@@ -4,30 +4,36 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    gap: 32px 8px;
+    padding-left: 2.22%;
+    padding-right: 2.22%;
+    margin: 50px 0px;
     @include media-breakpoint(screen-md) {
         grid-template-columns: repeat(3, 1fr);
     }
     @include media-breakpoint(screen-lg) {
         grid-template-columns: repeat(4, 1fr);
+        gap: 48px 8px;
     }
 
     .list-item {
-        margin-bottom: 20px;
+        height: 100%;
+        width: 100%;
 
         .book-card {
+            height: 100%;
+            width: 100%;
+            &__image-container {
+                height: 360px;
+                padding: 40px 0px;
+                background-color: $light-grey;
+                position: relative;
+            }
            &__details {
             padding: 10px 0px;
             display: flex;
             flex-direction: column;
             gap: 4px;
-
-            &--button {
-                display: flex;
-                width: 180px;
-                justify-content: center;
-                padding: 6px 0px;
-                text-transform: uppercase;
-            }
            }
         }
     }

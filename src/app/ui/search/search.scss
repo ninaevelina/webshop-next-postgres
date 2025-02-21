@@ -3,8 +3,9 @@
 .search {
     display: flex;
     justify-content: center;
-    width: calc(100% - 50px);
-    margin: 50px;
+    margin-top: 50px;
+    padding-left: 2.22%;
+    padding-right: 2.22%;
     @include media-breakpoint(screen-md) {
         justify-content: flex-start;
     }
@@ -20,10 +21,27 @@
         clip: rect(0, 0, 0, 0);
     }
     &__input {
-        padding: 10px;
+        padding-left: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         width: 60vw;
+        font-family: inherit;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid $black;
+        border-bottom: 1px solid $black;
+        font-size: 18px;
+        background-image: url('../../../../public/magnifying-glass.svg');
+        background-position: 4% 50%;
+        background-repeat: no-repeat;
         @include media-breakpoint(screen-lg) {
             width: 50vw;
         }
+        @include media-breakpoint(screen-xl) {
+            padding-left: 70px;
+        }
+    }
+    &__input::placeholder {
+        color: lighten($black, 20%);
     }
 }

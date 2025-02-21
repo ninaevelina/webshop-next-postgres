@@ -1,0 +1,114 @@
+@import "../../../../styles/main";
+
+.footer {
+    background-color: $black;
+    color: $white;
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include media-breakpoint(screen-lg) {
+            flex-direction: row;
+            padding-left: 2.22%;
+            padding-right: 2.22%;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid $grey;
+            padding: 20px 0px;
+            font-size: 4rem;
+            @include media-breakpoint(screen-lg) {
+                text-align: left;
+                width: 50%;
+                border-bottom: none;
+                border-right: 1px solid $grey;
+            }
+        }
+
+        .footer-contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0px;
+            @include media-breakpoint(screen-lg) {
+                width: 50%;
+            }
+
+            &__details {
+
+                p:first-child {
+                    margin-bottom: 8px;
+                    text-transform: uppercase;
+                    color: $grey;
+                }
+
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid $grey;
+
+        .footer-links {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+
+            &__list {
+                display: flex;
+                animation: animate_text 10s linear infinite;
+                white-space: nowrap;
+            }
+
+            &__list-item {
+                display: flex;
+                align-items: center;
+
+                &--link, &--separator {
+                    font-size: clamp(2.5rem, 10.66vw, 5.063rem);
+                    font-style: italic; 
+                }
+                &--link {
+                    padding: 24px 12px;
+                    @include media-breakpoint(screen-lg) {
+                        padding: 24px;
+                    }
+                }
+                &--link:hover {
+                    -webkit-text-stroke: 1px $white;
+                    color: transparent;
+                }
+                &--separator {
+                   line-height: 110%;
+                }
+
+            }
+        }
+    }
+}
+
+
+@keyframes animate_text {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@include media-breakpoint(screen-lg) {
+    @keyframes animate_text {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
