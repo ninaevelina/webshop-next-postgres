@@ -3,6 +3,7 @@ import "../styles/_globals.scss";
 import localFont from "next/font/local";
 import Header from "./ui/shared/header/header";
 import Footer from "./ui/shared/footer/footer";
+import { WishlistProvider } from "./lib/contexts/wishlist-context";
 
 const futura = localFont({
   src: "../fonts/FuturaEFCE-Medium.woff2",
@@ -20,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={futura.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <WishlistProvider>
+      <html lang="en">
+        <body className={futura.className}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </WishlistProvider>
   );
 }
