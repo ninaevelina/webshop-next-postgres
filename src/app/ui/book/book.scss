@@ -20,10 +20,12 @@
     &__img-container {
         place-self: center;
         grid-area: img;
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
         @include media-breakpoint(screen-md) {
-            display: flex;
-            justify-content: center;
-            height: 600px;
+            height: 600px;   
         }
     }
 
