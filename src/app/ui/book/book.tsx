@@ -5,6 +5,8 @@ import Image from "next/image";
 import useIsMobileView from "@/app/hooks/useIsMobileView";
 import Accordion from "../shared/accordion/accordion";
 import "./book.scss";
+import { useWishlist } from "@/app/lib/contexts/wishlist-context";
+import WishlistButton from "../shared/wishlist-button/wishlist-button";
 
 interface BookProps {
   book: Book;
@@ -12,6 +14,15 @@ interface BookProps {
 
 export default function BookCard({ book }: BookProps) {
   const isMobileView = useIsMobileView();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  const handleClick = () => {
+    if (isInWishlist(book)) {
+      removeFromWishlist(book);
+    } else {
+      addToWishlist(book);
+    }
+  };
   return (
     <section className="book-section">
       <div className="book-section__img-container">
@@ -21,7 +32,16 @@ export default function BookCard({ book }: BookProps) {
           width={280}
           alt={`Image of ${book.name}`}
         />
+        <div>
+          <WishlistButton
+            isFilled={isInWishlist(book)}
+            onClick={handleClick}
+            displayText={true}
+            isInHeader={false}
+          />
+        </div>
       </div>
+
       <div className="book-section__book-details">
         <h1 className="book-section__book-details--name">{book.name}</h1>
         <p className="book-section__book-details--author">
