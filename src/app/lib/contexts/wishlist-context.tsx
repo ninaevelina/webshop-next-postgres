@@ -6,6 +6,7 @@ import React, {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -25,18 +26,23 @@ const WishlistContext = createContext<WishlistContextProps | undefined>(
 );
 
 export const WishlistProvider = ({ children }: WishlistProviderProps) => {
-  const [wishlist, setWishlist] = useState<Book[]>(() => {
-    try {
-      const wishlistLS = localStorage.getItem("wishlist");
-      return wishlistLS ? JSON.parse(wishlistLS) : [];
-    } catch (error) {
-      console.error("Failed to get wishlist from localStorage", error);
-      return [];
-    }
-  });
+  const [wishlist, setWishlist] = useState<Book[]>([]);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    if (isInitialMount.current) {
+      try {
+        const wishlistLS = localStorage.getItem("wishlist");
+        if (wishlistLS) {
+          setWishlist(JSON.parse(wishlistLS));
+        }
+      } catch (error) {
+        console.error("Failed to get wishlist from localStorage", error);
+      }
+      isInitialMount.current = false;
+    } else {
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    }
   }, [wishlist]);
 
   const addToWishlist = (book: Book) => {
