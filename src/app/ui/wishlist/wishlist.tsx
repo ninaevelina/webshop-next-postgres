@@ -8,6 +8,7 @@ import "./wishlist.scss";
 export default function Wishlist() {
   const { wishlist } = useWishlist();
   const hasWishlistItems = wishlist.length > 0;
+
   return (
     <section className="wishlist-section">
       <div className="wishlist-header">
@@ -27,18 +28,15 @@ export default function Wishlist() {
                     src={item.image_url}
                     alt={item.name}
                     loading="lazy"
-                    sizes="(min-width: 768px) 25vw, 50vw"
-                    style={{
-                      objectFit: "contain",
-                      maxHeight: "100%",
-                      padding: "20px 0px",
-                    }}
-                    fill
+                    height={100}
+                    width={75}
                     className="item-card__image-container--image"
                   />
                 </div>
-                <div>
-                  <p>{item.name}</p>
+                <div className="item-card__book-details">
+                  <p className="item-card__book-details--name">{item.name}</p>
+                  <p>{item.author_name}</p>
+                  <p>{item.price} SEK</p>
                 </div>
               </Link>
             </li>
