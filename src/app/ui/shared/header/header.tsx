@@ -7,7 +7,7 @@ import useIsMobileView from "@/app/hooks/useIsMobileView";
 import BagIcon from "../../icons/shoppingbag/bag-icon";
 import CloseIcon from "../../icons/close-icon";
 import Hamburger from "../../icons/hamburger";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useWishlist } from "@/app/lib/contexts/wishlist-context";
 import WishlistButton from "../wishlist-button/wishlist-button";
 
@@ -18,6 +18,7 @@ function HeaderContent() {
   const searchParams = useSearchParams();
   const { wishlist } = useWishlist();
   const hasWishlistItems = wishlist.length > 0;
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -65,7 +66,7 @@ function HeaderContent() {
         <WishlistButton
           wishlistLength={wishlist.length}
           isFilled={hasWishlistItems}
-          onClick={() => console.log("click")}
+          onClick={() => router.push("/my-wishlist")}
           isInHeader={true}
         />
       </div>
