@@ -1,7 +1,16 @@
 # Readit
 
 Readit - a bookstore app built with Next.js, Typescript, SASS and PostgreSQL.
+
 🛠️ In development 🛠️
+
+## Features
+
+The application's main features include:
+
+### Wishlist
+
+Users can add and remove books to their wishlist which is stored in localStorage.
 
 ## Tech Stack
 
