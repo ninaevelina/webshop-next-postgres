@@ -1,0 +1,67 @@
+@import "../../../../styles/main.scss";
+
+.site-header {
+    display: grid;
+    grid-template-areas: "left logo right";
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    position: relative;
+    width: 100%;
+    outline: 1px solid black;
+
+    .site-header-left {
+        display: flex;
+        grid-area: left;
+        &__button, &__nav-links {
+            padding: 20px 16px;
+            display: flex;
+            align-items: center;
+        }
+        &__button {
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .site-header-logo {
+        display: flex;
+        grid-area: logo;
+        justify-content: center;
+        &__logo {
+            display: flex;
+            padding: 20px 16px;
+        }
+    }
+
+    .site-header-right {
+        display: flex;
+        grid-area: right;
+        justify-content: flex-end;
+        &__button {
+            padding: 20px 16px;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            &--amount {
+                padding: 0px 4px;
+            }
+        }
+    }
+
+    .site-header-hamburger-menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        z-index: 100;
+        height: 160px;
+        width: 100%;
+        padding: 0;
+        outline: 1px solid black;
+        background-color: white;
+        justify-content: space-evenly;
+        text-transform: uppercase;
+
+    }
+}
